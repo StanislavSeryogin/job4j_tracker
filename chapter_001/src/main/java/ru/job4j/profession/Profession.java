@@ -1,0 +1,16 @@
+package ru.job4j.profession;
+
+public class Profession {
+    public String getName(String name) {
+        return name;
+    }
+    public String getSurname(String surname) {
+        return surname;
+    }
+    public String getEducation(String education) {
+        return education;
+    }
+    public int getBirthday(int birthday) {
+        return  birthday;
+    }
+}
