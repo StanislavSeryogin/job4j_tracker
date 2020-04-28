@@ -8,7 +8,8 @@ public class FindItemByName implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        for (Item item : tracker.findByName("fix bug")) {
+        String name = input.askStr("Enter name: ");
+        for (Item item : tracker.findByName(name)) {
             System.out.println(item.getId() + " " + item.getName());
         }
         return true;
