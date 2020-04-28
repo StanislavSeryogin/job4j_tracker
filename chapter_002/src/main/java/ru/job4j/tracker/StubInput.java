@@ -18,4 +18,9 @@ public class StubInput implements Input {
         return Integer.parseInt(askStr(question));
     }
 
+    @Override
+    public int askInt(String question, int max) {
+        return askInt(question);
+    }
+
 }
