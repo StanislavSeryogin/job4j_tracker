@@ -1,10 +1,10 @@
-package ru.job4j.oop.pojo;
+package ru.job4j.pojo;
 
 import java.util.Date;
 
 public class College {
     public static void main(String[] args) {
-        ru.job4j.oop.pojo.Student student = new Student();
+        Student student = new Student();
         student.setFirstName("Bruce");
         student.setLastName("Wayne");
         student.setFaculty("Batman.");

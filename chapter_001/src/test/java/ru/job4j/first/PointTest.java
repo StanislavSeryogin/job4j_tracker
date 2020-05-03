@@ -2,7 +2,6 @@ package ru.job4j.first;
 
 import org.junit.Assert;
 import org.junit.Test;
-import ru.job4j.first.Point;
 
 public class PointTest {
 

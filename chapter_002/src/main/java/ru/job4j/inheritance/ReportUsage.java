@@ -1,7 +1,4 @@
-package ru.job4j.oop.inheritance;
-
-import ru.job4j.oop.inheritance.HtmlReport;
-import ru.job4j.oop.inheritance.JSONReport;
+package ru.job4j.inheritance;
 
 public class ReportUsage {
     public static void main(String[] args) {

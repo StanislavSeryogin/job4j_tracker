@@ -1,4 +1,4 @@
-package ru.job4j.oop.pojo;
+package ru.job4j.pojo;
 
 public class Shop {
     public static void main(String[] args) {
@@ -29,7 +29,8 @@ public class Shop {
         }
 
         System.out.println();
-        System.out.println("Записываем  в ячейку с индексом 1 значение ячейки с индексом 2 и удаляем значение из ячейки с индексом 2");
+        System.out.println("Записываем  в ячейку с индексом 1 значение ячейки с индексом 2" +
+                " и удаляем значение из ячейки с индексом 2");
         products[1] = products[2];
         products[2] = null;
         for (Product product : products) {
@@ -52,9 +53,8 @@ public class Shop {
     }
     public Product[] delete(Product[] products, int index) {
         products[index] = null;
-        for (int i = index; i < products.length - 1; i++) {
-            products[i] = products[i + 1];
-        }
+        if (products.length - 1 - index >= 0)
+            System.arraycopy(products, index + 1, products, index, products.length - 1 - index);
         products[products.length - 1] = null;
         System.out.println();
         return products;

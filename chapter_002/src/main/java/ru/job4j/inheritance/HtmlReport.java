@@ -1,6 +1,4 @@
-package ru.job4j.oop.inheritance;
-
-import ru.job4j.oop.inheritance.TextReport;
+package ru.job4j.inheritance;
 
 public class HtmlReport extends TextReport {
     @Override
