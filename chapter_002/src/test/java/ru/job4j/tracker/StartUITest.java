@@ -4,8 +4,12 @@ import org.junit.Assert;
 import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.StringJoiner;
+import java.util.function.Consumer;
+
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
 
 public class StartUITest {
 
@@ -47,13 +51,25 @@ public class StartUITest {
         assertThat(deleted, is(IsNull.nullValue()));
     }*/
 
+    private final ByteArrayOutputStream out = new ByteArrayOutputStream();
+    private final Consumer<String> output = new Consumer<>() {
+        private final PrintStream stdout = new PrintStream(out);
+
+        @Override
+        public void accept(String s) {
+            stdout.println(s);
+        }
+    };
+
     @Test
     public void whenExit() {
         StubInput input = new StubInput(
                 new String[] {"0"}
         );
         StubAction action = new StubAction();
-        new StartUI().init(input, new Tracker(), new UserAction[] {action});
+        ArrayList<UserAction> actions = new ArrayList<>();
+        actions.add(action);
+        new StartUI(input, new Tracker(), System.out::println).init(actions);
         Assert.assertThat(action.isCall(), is(true));
     }
 
@@ -66,12 +82,13 @@ public class StartUITest {
                 new String[] {"0"}
         );
         StubAction action = new StubAction();
-        new StartUI().init(input, new Tracker(), new UserAction[] {action});
+        ArrayList<UserAction> actions = new ArrayList<>();
+        actions.add(action);
+        new StartUI(input, new Tracker(), this.output).init(actions);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
                 .add("Menu.")
                 .add("0. Stub action")
                 .toString();
-        Assert.assertThat(new String(out.toByteArray()), is(expect));
-        System.setOut(def);
+        assertThat(new String(this.out.toByteArray()), is(expect));
     }
 }

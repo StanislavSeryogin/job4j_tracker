@@ -1,21 +1,20 @@
 package ru.job4j.tracker;
 
+import java.util.ArrayList;
 import java.util.Random;
-import java.util.Arrays;
 
 public class Tracker {
 
-    private final Item[] items = new Item[100];
-    private int position = 0;
+    private final ArrayList<Item> items = new ArrayList<>();
 
     public Item add(Item item) {
-        item.setId(generateId());
-        this.items[position++] = item;
+        item.setId(this.generateId());
+        items.add(item);
         return item;
     }
 
-    public Item[] findAll() {
-        return Arrays.copyOf(items, position);
+    public ArrayList<Item> findAll() {
+        return items;
     }
 
     private String generateId() {
@@ -25,9 +24,9 @@ public class Tracker {
 
     private int indexOf(String id) {
         int rsl = -1;
-        for (int index = 0; index < position; index++) {
-            if (items[index].getId().equals(id)) {
-                rsl = index;
+        for (Item item : items) {
+            if (item.getId().equals(id)) {
+                rsl = items.indexOf(item);
                 break;
             }
         }
@@ -35,43 +34,37 @@ public class Tracker {
     }
 
     public Item findById(String id) {
-        int index = indexOf(id);
-        return index != -1 ? items[index] : null;
+        return (indexOf(id) != -1) ? (items.get(indexOf(id))) : (null);
     }
 
-    public Item[] findByName(String key) {
-        int count = 0;
-        Item[] findName = new Item[position];
-        for (int index = 0; index < position; index++) {
-            if (key.equals(items[index].getName())) {
-                findName[count] = items[index];
-                count++;
+    public ArrayList<Item> findByName(String key) {
+        ArrayList<Item> itemsIncludeKey = new ArrayList<>();
+        for (Item item : items) {
+            if (item.getName().equals(key)) {
+                itemsIncludeKey.add(item);
             }
         }
-        return Arrays.copyOf(findName, count);
+        return itemsIncludeKey;
     }
 
     public boolean replace(String id, Item item) {
-        boolean result = false;
+        boolean rsl = false;
         int index = indexOf(id);
         if (index != -1) {
+            items.set(index, item);
             item.setId(id);
-            items[index] = item;
-            result = true;
+            rsl = true;
         }
-        return result;
+        return rsl;
     }
 
     public boolean delete(String id) {
+        boolean rsl = false;
         int index = indexOf(id);
-        boolean fix = false;
         if (index != -1) {
-            items[index] = null;
-            System.arraycopy(items, index + 1, items, index, position - index);
-            items[position - 1] = null;
-            position--;
-            fix = true;
+            items.remove(index);
+            rsl = true;
         }
-        return fix;
+        return rsl;
     }
 }
