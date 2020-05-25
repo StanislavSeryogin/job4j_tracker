@@ -1,7 +1,7 @@
 package ru.job4j.oop;
 
 import org.junit.Test;
-import ru.job4j.oop.pojo.License;
+import ru.job4j.pojo.License;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
