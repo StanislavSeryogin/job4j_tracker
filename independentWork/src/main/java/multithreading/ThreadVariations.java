@@ -4,7 +4,7 @@ public class ThreadVariations {
     public static void main(String[] args) {
         System.out.println("Main thread start.");
 
-        MyThread mt = MyThread.creatAndStart("Spawned stream #1");
+       /* MyThread mt = MyThread.creatAndStart("Spawned stream #1");
 
         for (int i = 0; i < 50; i++) {
             System.out.print(".");
@@ -14,6 +14,6 @@ public class ThreadVariations {
                 System.out.println("Main thread interruption");
             }
         }
-        System.out.println("Completion of the main thread");
+        System.out.println("Completion of the main thread");*/
     }
 }

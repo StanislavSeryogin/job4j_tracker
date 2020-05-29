@@ -4,7 +4,7 @@ public class MoreThreads {
     public static void main(String[] args) {
         System.out.println("Main thread start.");
 
-        MyThread mt1 = MyThread.creatAndStart("Spawned stream #1");
+       /* MyThread mt1 = MyThread.creatAndStart("Spawned stream #1");
         MyThread mt2 = MyThread.creatAndStart("Spawned stream #2");
         MyThread mt3 = MyThread.creatAndStart("Spawned stream #3");
 
