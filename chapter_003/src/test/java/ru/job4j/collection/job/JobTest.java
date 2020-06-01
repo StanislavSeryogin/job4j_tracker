@@ -23,10 +23,10 @@ public class JobTest {
     public void getPriorityAndName() {
         Comparator<Job> cmp = new JobAscByPriority().thenComparing(new JobDescByName());
         int rsl = cmp.compare(
-                new Job("Impl task", 0),
-                new Job("Fix bug", 1)
+                new Job("Impl task", 1),
+                new Job("Fix bug", 0)
         );
-        assertThat(rsl, lessThan(0));
+        assertThat(rsl, greaterThan(0));
     }
 
     @Test
