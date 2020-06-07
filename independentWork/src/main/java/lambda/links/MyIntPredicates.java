@@ -1,4 +1,4 @@
-package lambda.links.staticMethod;
+package lambda.links;
 
 public class MyIntPredicates {
     static boolean isPrime(int n) {

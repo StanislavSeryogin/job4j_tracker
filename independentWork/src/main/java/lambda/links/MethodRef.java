@@ -1,4 +1,4 @@
-package lambda.links.staticMethod;
+package lambda.links;
 
 public class MethodRef {
     static boolean numTest(IntPredicate p, int v) {
