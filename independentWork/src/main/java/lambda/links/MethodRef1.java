@@ -14,5 +14,9 @@ public class MethodRef1 {
         ip = myNum1 :: isFactor;
         result = ip.test(3);
         if (!result) System.out.println("3 is not a divisor " + myNum1.getNum());
+
+        ip = myNum::hasCommonFactor;
+        result = ip.test(9);
+        if (result) System.out.println("Common factor found");
     }
 }
