@@ -17,12 +17,12 @@ public class SchoolTest {
         School school = new School();
         List<Student> students = Arrays.asList(
                 new Student("First", 100),
-                new Student("Second", 71),
+                new Student("Second", 80),
                 new Student("Third", 30),
                 new Student("Fourth", 60),
                 new Student("Fifth", 10)
         );
-        Predicate<Student> predicate = student -> (student.getScore() >= 70 && student.getScore()<= 100);
+        Predicate<Student> predicate = student -> (student.getScore() > 70 && student.getScore() <= 100);
         List<Student> result = school.collect(students, predicate);
         List<Student> expect = new ArrayList<>();
         expect.add(students.get(0));
@@ -40,7 +40,7 @@ public class SchoolTest {
                 new Student("Fourth", 60),
                 new Student("Fifth", 10)
         );
-        Predicate<Student> predicate = student -> (student.getScore() >= 50 && student.getScore()<= 70);
+        Predicate<Student> predicate = student -> (student.getScore() > 50 && student.getScore()< 70);
         List<Student> result = school.collect(students, predicate);
         List<Student> expect = new ArrayList<>();
         expect.add(students.get(3));
@@ -57,7 +57,7 @@ public class SchoolTest {
                 new Student("Fourth", 60),
                 new Student("Fifth", 10)
         );
-        Predicate<Student> predicate = student -> (student.getScore() >= 0 && student.getScore()<= 50);
+        Predicate<Student> predicate = student -> (student.getScore() >= 0 && student.getScore()< 50);
         List<Student> result = school.collect(students, predicate);
         List<Student> expect = new ArrayList<>();
         expect.add(students.get(2));
