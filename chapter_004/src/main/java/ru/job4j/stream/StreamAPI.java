@@ -19,10 +19,9 @@ public class StreamAPI {
                 new Task(3),
                 new Task(0)
         );
-
         Integer nums = tasks.stream().map(
                 task -> task.num
         ).reduce(0, Integer::sum);
         System.out.println(nums);
-    }//
+    }
 }
