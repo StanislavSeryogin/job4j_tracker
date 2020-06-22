@@ -24,5 +24,5 @@ public class StreamAPI {
                 task -> task.num
         ).reduce(0, Integer::sum);
         System.out.println(nums);
-    }
+    }//
 }
