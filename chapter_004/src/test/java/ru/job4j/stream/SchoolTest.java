@@ -62,4 +62,19 @@ public class SchoolTest {
         expect.add(students.get(4));
         assertThat(result, is(expect));
     }
+
+    @Test
+    public void studentsMapTest() {
+        School school = new School();
+        List<Student> students = Arrays.asList(
+                new Student("First", 100),
+                new Student("Second", 71),
+                new Student("Third", 30),
+                new Student("Fourth", 60),
+                new Student("Fifth", 10)
+        );
+        Map<String, Student> exp = new HashMap<>();
+        Map<String, Student> rsl = school.studentsMap();
+        assertThat(rsl, is(exp));
+    }
 }
