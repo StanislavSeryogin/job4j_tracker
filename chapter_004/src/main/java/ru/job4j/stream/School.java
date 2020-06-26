@@ -24,4 +24,8 @@ public class School {
                                 )
                 );
     }
+
+    public void add(Student student) {
+        this.students.add(student);
+    }
 }
