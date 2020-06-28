@@ -69,16 +69,19 @@ public class SchoolTest {
         Student second = new Student("Second", 71);
         Student third = new Student("Third", 30);
         Student fourth = new Student("Fourth", 60);
+        Student fifth = new Student("Second", 71);
         School school = new School();
         school.add(first);
         school.add(second);
         school.add(third);
         school.add(fourth);
+        school.add(fifth);
         Map<String, Student> exp = new HashMap<>();
         exp.put(first.getSurname(), first);
         exp.put(second.getSurname(), second);
         exp.put(third.getSurname(), third);
         exp.put(fourth.getSurname(), fourth);
+        exp.put(fifth.getSurname(), fifth);
         Map<String, Student> rsl = school.studentsMap();
         assertThat(rsl, is(exp));
     }
