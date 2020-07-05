@@ -2,6 +2,10 @@ package ru.job4j.search;
 
 import java.util.LinkedList;
 
+/**
+ * var;
+ */
+
 public class PriorityQueue {
     private LinkedList<Task> tasks = new LinkedList<>();
 

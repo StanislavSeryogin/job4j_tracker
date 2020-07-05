@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.function.Predicate;
 
+/**
+ * Закомнированно с использованием var;
+ */
+
 public class PhoneDictionary {
     private ArrayList<Person> persons = new ArrayList<>();
 
