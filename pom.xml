@@ -8,11 +8,22 @@
     <artifactId>tracker</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>13</source>
+                    <target>13</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <modules>
         <module>chapter_001</module>
         <module>chapter_002</module>
         <module>chapter_003</module>
-        <module>independentWork</module>
         <module>chapter_004</module>
     </modules>
 
