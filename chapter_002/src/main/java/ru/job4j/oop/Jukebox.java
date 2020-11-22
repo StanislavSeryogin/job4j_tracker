@@ -14,7 +14,7 @@ public class Jukebox {
     }
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Jukebox petya = new Jukebox();
+        var petya = new Jukebox();
         System.out.print("Твой выбор: ");
         int x = in.nextInt();
         petya.music(x);

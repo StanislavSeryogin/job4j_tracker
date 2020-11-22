@@ -76,7 +76,7 @@ public class StartUITest {
     @Test
     public void whenPrtMenu() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        PrintStream def = System.out;
+        //PrintStream def = System.out;
         System.setOut(new PrintStream(out));
         StubInput input = new StubInput(
                 new String[] {"0"}
